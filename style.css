@@ -2,10 +2,10 @@
     list-style-type: none;
     margin:auto;
     padding: 0;
+    height:50px;
     overflow: hidden;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
-    text-align: center;
 }
 
 #navigation  li {
@@ -28,7 +28,7 @@
     color: white;
     background-color: #4CAF50;
 }
- 
+
 #main {
 	margin:auto;
 	width:70%;
