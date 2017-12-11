@@ -33,11 +33,21 @@
 				})
 				.on('click', function() {
 					$(this).toggleClass('persistent');
-					$(this).data('quest', {
-						    nbr: +1,
-						});
-					$('p').append($(this).data('quest'));
-					$('p').append($(this).data('nbr'));
+					//$('p').append(jQuery.hasData($(this)) + " " );
+					if(($(this).data('nbr')) > 0){
+						var nbr = $(this).data('nbr');
+						nbr++;
+						//alert(nbr);
+						var nbr = $(this).data('nbr', nbr);
+						nbr = parseInt(nbr);
+						alert(nbr);
+						$('#clic'+$(this).data('quest')).replaceWith(nbr);
+					}else{
+						$(this).data('nbr', 1);
+						$('#clic'+$(this).data('quest')).replaceWith(1);
+					}
+					//$('p').append($(this).data('quest'));
+					
 				});
 					
 				
