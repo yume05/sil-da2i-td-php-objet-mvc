@@ -7,6 +7,10 @@ if (!$link) {
     die('Connexion impossible : ' . mysqli_error());
 }
 
+function getBlock($file, $data = [])
+{
+    require $file;
+}
 
 function datetomonth($month){
 	if($month == 1){
@@ -49,5 +53,8 @@ function datetomonth($month){
 	return $monthtext;
 }
 
-
+ini_set('error_reporting', -1);
+ini_set('display_errors', 'on'); // 'on' en développement, 'off' en production
+ini_set('log_errors', 'on');
+ini_set('error_log', '/path/to/file.log');
 ?>

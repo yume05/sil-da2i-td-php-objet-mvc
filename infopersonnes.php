@@ -1,14 +1,14 @@
 <article id="realisateur">
 	<p><?php 
-	echo $row4['prenom']." ".$row4['nom']; ?><br>
+	echo $data['infos']['prenom']." ".$data['infos']['nom']; ?><br>
 
 		Né le <time><?php
-			$month = datetomonth($row4['mois']);
-			echo $row4['jour']." ".$month." ".$row4['annee'];
+			$month = datetomonth($data['infos']['mois']);
+			echo $data['infos']['jour']." ".$month." ".$data['infos']['annee'];
 		?></time><br>
-		<img src=<?php echo "'".$row4['chemin']."'"; ?> width="200" />
+		<img src=<?php echo "'".$data['infos']['chemin']."'"; ?> width="200" />
 		<h3>Biographie</h3>
-		 <?php echo $row4['biographie']; ?><br>
+		 <?php echo $data['infos']['biographie']; ?><br>
 		
 	</p>
 </article>

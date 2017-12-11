@@ -58,6 +58,9 @@
 #realisateur {
 	text-align: justify;
 }
+#faq dd{
+	display: none;
+}
 footer{
 	color: #666;
 	list-style-type: none;

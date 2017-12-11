@@ -1,8 +1,9 @@
 <h3>Filmographie</h3>
-				<ul>
-					<?php 
-						while($row = mysqli_fetch_array($req5, MYSQL_ASSOC)){
-							echo "<li>".$row['datesortie']." - ".$row['titre']."</li>";
-						}
-					?>
-				</ul>
+	<ul>
+		<?php 
+		print_r($data);
+			for($i=0;$i<sizeof($data['films']);$i++){
+				echo "<li>".$data['film'][$i]['datesortie']." - ".$data['film'][$i]['titre']."</li>";
+			}
+		?>
+	</ul>
