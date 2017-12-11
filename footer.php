@@ -4,6 +4,9 @@
     <script>
         // on attend que le document soit complètement construit
         $(document).ready(function() {
+        	$('#charger').on('click', function() {
+        		$("#charger").load("faq.php #faq");
+        	})
             // votre script
 				var action;
 				var answer;

@@ -56,7 +56,9 @@ if(isset($_GET['idfilm'])){
 	
 	?>
 		<section id="main">
-			<?php getBlock("./infosfilm.php", $tabInfos); 
+		<avide id="charger">Chargez</avide>
+					<?php 
+				  getBlock("./infosfilm.php", $tabInfos); 
 				  getBlock("./listeimages.php", $tabImages); 
 				  getBlock("./cadreapercupersonne.php", $tabPersonnes); ?>		
 		</section>
