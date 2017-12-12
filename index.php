@@ -1,26 +1,24 @@
-<?php
-include './connect.php';
-?>
-	<?php 
-
-	getBlock("./header.php"); ?>
+<?php 
+include ("./header.php"); ?>
 	<section  id="main">
 
 		<?php 
 		echo "<br><b>FILMS : </b><br>";
-		$req = mysqli_query($link, 'SELECT * FROM film where synopsis is not NULL;');
-		while($row = mysqli_fetch_array($req, MYSQL_ASSOC)){
-			echo "<a href='./film.php?idfilm=".$row['id']."'>".$row['titre']."</a><br>";
+		$tabMovies = $movie->getAllMovies();
+		for ($i=0; $i<sizeof($tabMovies);$i++){
+			echo "<a href='./film.php?idfilm=".$tabMovies[$i]['id']."'>".$tabMovies[$i]['titre']."</a><br>";
 		}
+		
 		echo "<br><b>REALISATEURS : </b><br>";
-		$req1 = mysqli_query($link, 'SELECT DISTINCT(nom), prenom, id FROM personne INNER JOIN film_has_personne ON personne.id = film_has_personne.id_personne WHERE role = "realisateur";');
-		while($row = mysqli_fetch_array($req1, MYSQL_ASSOC)){
-			echo "<a href='./realisateur.php?id=".$row['id']."'>".$row['nom']." ".$row['prenom']."</a><br>";
+		$tabDirectors = $director->getAllDirectors();
+		for ($i=0; $i<sizeof($tabDirectors);$i++){
+			echo "<a href='./realisateur.php?id=".$tabDirectors[$i]['id']."'>".$tabDirectors[$i]['nom']." ".$tabDirectors[$i]['prenom']."</a><br>";
 		}
+
 		echo "<br><b>ACTEURS :</b> <br>";
-		$req1 = mysqli_query($link, 'SELECT * FROM personne INNER JOIN film_has_personne ON personne.id = film_has_personne.id_personne WHERE role = "acteur";');
-		while($row = mysqli_fetch_array($req1, MYSQL_ASSOC)){
-			echo "<a href='./acteur.php?id=".$row['id']."'>".$row['nom']." ".$row['prenom']."</a><br>";
+		$tabActors = $actor->getAllActors();
+		for ($i=0; $i<sizeof($tabActors);$i++){
+			echo "<a href='./acteur.php?id=".$tabActors[$i]['id']."'>".$tabActors[$i]['nom']." ".$tabActors[$i]['prenom']."</a><br>";
 		}
 		echo "<br>";
 		 ?>		

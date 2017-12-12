@@ -1,4 +1,13 @@
-
+<?php
+include './connect.php';
+include './class/Movie.php';
+include './class/Actor.php';
+include './class/Director.php';
+//$bdd = new Bdd;
+$movie = new Movie();
+$director = new Director();
+$actor = new Actor();
+?>
 <!doctype html>
 <html>
 <title>TD 1</title>
@@ -13,9 +22,5 @@
 <header>
 		<ul id="navigation">
 			<li><a href="./index.php">Accueil</a></li>
-			<li><a href="./faq.php">F.A.Q</a></li>
 		</ul>
 	</header>
-	<button id="hideAside"></button>
-	<button id="fadeImg"></button>
-	<button id="toggleMen"></button>

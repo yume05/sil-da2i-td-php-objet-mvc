@@ -1,11 +1,11 @@
 <?php
 // on se connecte à example.com et au port 3307
-$link = mysqli_connect('localhost', 'phpmyadmin', 'ini01', 'projet_film_lp');
+//$link = mysqli_connect('localhost', 'phpmyadmin', 'ini01', 'projet_film_lp');
 	
-mysqli_set_charset($link, "utf8");
-if (!$link) {
-    die('Connexion impossible : ' . mysqli_error());
-}
+//mysqli_set_charset($link, "utf8");
+//if (!$link) {
+ //   die('Connexion impossible : ' . mysqli_error());
+//}
 
 function getBlock($file, $data = [])
 {

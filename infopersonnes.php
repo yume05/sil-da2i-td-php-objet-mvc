@@ -9,6 +9,5 @@
 		<img src=<?php echo "'".$data['infos']['chemin']."'"; ?> width="200" />
 		<h3>Biographie</h3>
 		 <?php echo $data['infos']['biographie']; ?><br>
-		
 	</p>
 </article>
